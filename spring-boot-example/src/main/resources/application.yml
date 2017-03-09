@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Logstore
+    
+liquibase:
+  change-log: classpath:db/changelog/db.changelog.xml
+
+camel:
+  component:
+    servlet:
+      mapping:
+        enabled: true
+        context-path: /camel/*
+  
+lucene:
+  commit:
+    type: counter
+    interval: 0
+    limit: 1000
+    

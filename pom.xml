@@ -8,6 +8,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>lucene-jdbc-backend</module>
 		<module>spring-boot-example</module>
 	</modules>
 

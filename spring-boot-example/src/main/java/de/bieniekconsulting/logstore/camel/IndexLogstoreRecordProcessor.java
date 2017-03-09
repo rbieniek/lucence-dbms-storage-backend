@@ -5,7 +5,8 @@ import org.apache.camel.Processor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.lucene.LucenceService;
+import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
+import de.bieniekconsulting.logstore.lucene.jdbc.types.LogRecord;
 import de.bieniekconsulting.logstore.persistence.LogstoreRecord;
 import lombok.RequiredArgsConstructor;
 
@@ -17,7 +18,9 @@ public class IndexLogstoreRecordProcessor implements Processor {
 
 	@Override
 	public void process(final Exchange exchange) throws Exception {
-		service.indexLogstoreRecord(exchange.getIn().getBody(LogstoreRecord.class));
+		final LogstoreRecord record = exchange.getIn().getBody(LogstoreRecord.class);
+
+		service.indexLogRecord(LogRecord.builder().id(record.getId()).messageText(record.getMessageText()).build());
 	}
 
 }

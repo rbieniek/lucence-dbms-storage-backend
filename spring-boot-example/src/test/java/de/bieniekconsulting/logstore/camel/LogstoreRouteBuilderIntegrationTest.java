@@ -37,12 +37,12 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import de.bieniekconsulting.logstore.LogstoreConfiguration;
-import de.bieniekconsulting.logstore.TestConfiguration;
 import de.bieniekconsulting.logstore.components.ComponentsConfiguration;
-import de.bieniekconsulting.logstore.lucene.LucenceService;
+import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
 import de.bieniekconsulting.logstore.persistence.LogstoreRecord;
 import de.bieniekconsulting.logstore.persistence.LogstoreService;
 import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = LogstoreRouteBuilderIntegrationTest.TestConfig.class)
@@ -320,7 +320,7 @@ public class LogstoreRouteBuilderIntegrationTest {
 		public LucenceService luceneService() throws Exception {
 			final LucenceService service = mock(LucenceService.class);
 
-			when(service.searchLogstoreRecords(any(Set.class), any(Integer.class))).then(args -> {
+			when(service.searchLogRecords(any(Set.class), any(Integer.class))).then(args -> {
 				final Set<String> terms = args.getArgumentAt(0, Set.class);
 				final Set<Long> ids = new HashSet<>();
 

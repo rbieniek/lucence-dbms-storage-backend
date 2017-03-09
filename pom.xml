@@ -8,6 +8,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>spring-support</module>
 		<module>lucene-jdbc-backend</module>
 		<module>spring-boot-example</module>
 	</modules>
@@ -41,6 +42,7 @@
 		<arquillianVersion>1.1.12.Final</arquillianVersion>
 		<shrinkwrapResolverVersion>2.2.0</shrinkwrapResolverVersion>
 		<arquillianChameleonVersion>1.0.0.Beta1</arquillianChameleonVersion>
+		<mockitoVersion>1.10.19</mockitoVersion>
 
 		<pluginMavenCompilerVersion>3.6.1</pluginMavenCompilerVersion>
 		<pluginMavenWarVersion>3.0.0</pluginMavenWarVersion>
@@ -321,6 +323,12 @@
 				<groupId>org.arquillian.container</groupId>
 				<artifactId>arquillian-container-chameleon</artifactId>
 				<version>${arquillianChameleonVersion}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockitoVersion}</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>

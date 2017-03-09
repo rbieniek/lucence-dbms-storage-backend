@@ -11,8 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import de.bieniekconsulting.logstore.TestConfiguration;
 import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.NONE, classes = LogstoreServiceIntegrationTest.TestConfig.class)

@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import de.bieniekconsulting.springframework.support.TestConfiguration;
+
 @SpringBootApplication
 @Configuration
 @ComponentScan(excludeFilters = @Filter(type = ANNOTATION, classes = TestConfiguration.class))

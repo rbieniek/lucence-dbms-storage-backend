@@ -29,6 +29,11 @@
 	<dependencies>
 	  <dependency>
 		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>spring-support</artifactId>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
 		<artifactId>lucene-jdbc-backend</artifactId>
 		<version>1.0</version>
 	  </dependency>

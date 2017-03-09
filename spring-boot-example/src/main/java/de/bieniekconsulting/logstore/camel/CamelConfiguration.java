@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-import de.bieniekconsulting.logstore.TestConfiguration;
+import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @Configuration
 @ComponentScan(excludeFilters = @Filter(type = ANNOTATION, classes = TestConfiguration.class))

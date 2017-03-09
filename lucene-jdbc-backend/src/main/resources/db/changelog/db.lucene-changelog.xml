@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="lucence-locks" author="Rainer Bieniek">
+		<createTable tableName="LUCENE_LOCKS">
+			<column name="ID" type="VARCHAR(37)">
+				<constraints nullable="false" />
+			</column>
+			<column name="DIRECTORY_NAME" type="VARCHAR(256)">
+				<constraints nullable="false" />
+			</column>
+			<column name="LOCK_NAME" type="VARCHAR(256)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addPrimaryKey columnNames="ID" tableName="LUCENE_LOCKS"
+			constraintName="LUCENE_LOCKS_PK" />
+
+		<createIndex tableName="LUCENE_LOCKS" indexName="LUCENE_LOCKS_DIR_LOCK_NAME_UQ"
+			unique="true">
+			<column name="DIRECTORY_NAME" />
+			<column name="LOCK_NAME" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet id="lucence-files" author="Rainer Bieniek">
+		<createTable tableName="LUCENE_FILES">
+			<column name="ID" type="VARCHAR(37)">
+				<constraints nullable="false" />
+			</column>
+			<column name="DIRECTORY_NAME" type="VARCHAR(256)">
+				<constraints nullable="false" />
+			</column>
+			<column name="FILE_NAME" type="VARCHAR(256)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<createTable tableName="LUCENE_EXTENTS">
+			<column name="ID" type="VARCHAR(37)">
+				<constraints nullable="false" />
+			</column>
+			<column name="FILE_ID" type="VARCHAR(37)">
+				<constraints nullable="false" />
+			</column>
+			<column name="EXTENT_NUMBER" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="EXTENT_LENGTH" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="EXTENT_DATA" type="CLOB">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addPrimaryKey columnNames="ID" tableName="LUCENE_FILES"
+			constraintName="LUCENE_FILES_PK" />
+		<addPrimaryKey columnNames="ID" tableName="LUCENE_EXTENTS"
+			constraintName="LUCENE_EXTENTS_FK" />
+
+		<addForeignKeyConstraint baseColumnNames="FILE_ID"
+			baseTableName="LUCENE_EXTENTS" constraintName="LUCENE_FILE_EXTENT_FK"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="ID"
+			referencedTableName="LUCENE_FILES" />
+
+		<createIndex tableName="LUCENE_FILES" indexName="LUCENE_FILES_DIR_FILE_NAME_UQ"
+			unique="true">
+			<column name="DIRECTORY_NAME" />
+			<column name="FILE_NAME" />
+		</createIndex>
+		<createIndex tableName="LUCENE_EXTENTS" indexName="LLUCENE_EXTENTS_FILE_EXTENT_UQ"
+			unique="true">
+			<column name="FILE_ID" />
+			<column name="EXTENT_NUMBER" />
+		</createIndex>
+	</changeSet>
+
+</databaseChangeLog>

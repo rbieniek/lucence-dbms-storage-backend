@@ -17,7 +17,7 @@ import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.lucene.LucenceService;
+import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
 import lombok.RequiredArgsConstructor;
 
 @Component
@@ -41,7 +41,7 @@ public class SearchLogMessageEndpoint {
 			final Set<String> terms = new HashSet<>();
 
 			terms.add(term);
-			luceneService.searchLogstoreRecords(terms, limit).forEach(id -> {
+			luceneService.searchLogRecords(terms, limit).forEach(id -> {
 				links.add(new Link(baseUri.toString() + "/log/retrieve/" + id));
 			});
 		}

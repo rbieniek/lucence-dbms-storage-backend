@@ -5,9 +5,9 @@ import org.apache.camel.Processor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
 import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
 import de.bieniekconsulting.logstore.lucene.jdbc.types.LogRecord;
-import de.bieniekconsulting.logstore.persistence.LogstoreRecord;
 import lombok.RequiredArgsConstructor;
 
 @Component

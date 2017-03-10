@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.persistence.LogstoreService;
+import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
+import de.bieniekconsulting.jdbc.logstore.LogstoreService;
 import de.bieniekconsulting.logstore.types.LogstoreMessage;
 import lombok.RequiredArgsConstructor;
 
@@ -23,12 +24,13 @@ public class RetrieveLogMessageEndpoint {
 		exchange.getOut().setBody(null);
 
 		if (id != null) {
-			final Optional<LogstoreMessage> message = logstoreService.retrieveLogstoreMessage(id);
+			final Optional<LogstoreRecord> record = logstoreService.retrieveLogstoreRecord(id);
 
-			if (message.isPresent()) {
+			if (record.isPresent()) {
 				exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_CODE, HttpStatus.OK.value());
 				exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_TEXT, HttpStatus.OK.getReasonPhrase());
-				exchange.getOut().setBody(message.get(), LogstoreMessage.class);
+				exchange.getOut().setBody(LogstoreMessage.builder().messageText(record.get().getMessageText())
+						.timestamp(record.get().getTimestamp()).build(), LogstoreMessage.class);
 			} else {
 				exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_CODE, HttpStatus.NOT_FOUND.value());
 				exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_TEXT, HttpStatus.NOT_FOUND.getReasonPhrase());

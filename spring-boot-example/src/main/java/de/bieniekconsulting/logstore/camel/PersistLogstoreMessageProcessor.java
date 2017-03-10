@@ -5,8 +5,8 @@ import org.apache.camel.Processor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.persistence.LogstoreRecord;
-import de.bieniekconsulting.logstore.persistence.LogstoreService;
+import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
+import de.bieniekconsulting.jdbc.logstore.LogstoreService;
 import de.bieniekconsulting.logstore.types.LogstoreMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +24,8 @@ public class PersistLogstoreMessageProcessor implements Processor {
 
 		log.info("saving log message '{}' to database", message);
 
-		final LogstoreRecord record = service.persistLogstoreMessage(message);
+		final LogstoreRecord record = service.persistLogstoreRecord(LogstoreRecord.builder()
+				.messageText(message.getMessageText()).timestamp(message.getTimestamp()).build());
 
 		exchange.getIn().setBody(record);
 	}

@@ -6,24 +6,6 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
 	<include file="db/changelog/db.lucene-changelog.xml"/>
-
-	<changeSet id="baseline" author="Rainer Bieniek">
-		<createTable tableName="LOGSTORE_RECORDS">
-			<column name="ID" type="BIGINT">
-				<constraints nullable="false" />
-			</column>
-			<column name="TIMESTAMP" type="BIGINT">
-				<constraints nullable="false" />
-			</column>
-			<column name="MESSAGE_TEXT" type="CLOB">
-				<constraints nullable="false" />
-			</column>
-		</createTable>
-
-		<addPrimaryKey columnNames="ID" tableName="LOGSTORE_RECORDS"
-			constraintName="LOGSTORE_RECORDS_PK" />
-
-		<createSequence sequenceName="LOGSTORE_SEQ" />
-	</changeSet>
+	<include file="db/changelog/db.logstore-changelog.xml"/>
 
 </databaseChangeLog>

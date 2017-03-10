@@ -7,17 +7,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import de.bieniekconsulting.jdbc.logstore.JdbcLogstoreConfiguration;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @SpringBootApplication
 @Configuration
 @ComponentScan(excludeFilters = @Filter(type = ANNOTATION, classes = TestConfiguration.class))
 @EnableAutoConfiguration
+@Import(JdbcLogstoreConfiguration.class)
 public class LogstoreConfiguration {
 	@Configuration
 	@EnableWebSecurity

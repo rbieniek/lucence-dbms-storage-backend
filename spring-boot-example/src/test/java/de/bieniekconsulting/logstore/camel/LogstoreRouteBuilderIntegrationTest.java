@@ -36,11 +36,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
+import de.bieniekconsulting.jdbc.logstore.LogstoreService;
 import de.bieniekconsulting.logstore.LogstoreConfiguration;
 import de.bieniekconsulting.logstore.components.ComponentsConfiguration;
 import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
-import de.bieniekconsulting.logstore.persistence.LogstoreRecord;
-import de.bieniekconsulting.logstore.persistence.LogstoreService;
 import de.bieniekconsulting.logstore.types.LogstoreMessage;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
@@ -295,18 +295,18 @@ public class LogstoreRouteBuilderIntegrationTest {
 		public LogstoreService logstoreService() {
 			final LogstoreService service = mock(LogstoreService.class);
 
-			when(service.persistLogstoreMessage(any(LogstoreMessage.class))).thenAnswer(args -> {
-				final LogstoreMessage message = args.getArgumentAt(0, LogstoreMessage.class);
+			when(service.persistLogstoreRecord(any(LogstoreRecord.class))).thenAnswer(args -> {
+				final LogstoreRecord message = args.getArgumentAt(0, LogstoreRecord.class);
 
 				return LogstoreRecord.builder().messageText(message.getMessageText()).timestamp(message.getTimestamp())
 						.id(1L).build();
 			});
 
-			when(service.retrieveLogstoreMessage(any(Long.class))).then(args -> {
+			when(service.retrieveLogstoreRecord(any(Long.class))).then(args -> {
 				final Long id = args.getArgumentAt(0, Long.class);
 
 				if (id == 1) {
-					return Optional.of(LogstoreMessage.builder().messageText("foo bar").timestamp(1L).build());
+					return Optional.of(LogstoreRecord.builder().id(id).messageText("foo bar").timestamp(1L).build());
 				} else {
 					return Optional.empty();
 				}

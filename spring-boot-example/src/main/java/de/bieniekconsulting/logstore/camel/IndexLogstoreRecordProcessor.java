@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
-import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
-import de.bieniekconsulting.logstore.lucene.jdbc.types.LogRecord;
+import de.bieniekconsulting.lucene.jdbc.directory.LucenceService;
+import de.bieniekconsulting.lucene.jdbc.types.LogRecord;
 import lombok.RequiredArgsConstructor;
 
 @Component

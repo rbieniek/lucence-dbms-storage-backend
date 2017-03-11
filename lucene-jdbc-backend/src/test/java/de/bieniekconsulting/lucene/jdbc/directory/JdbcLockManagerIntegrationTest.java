@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -19,6 +19,10 @@ import org.springframework.jdbc.core.StatementCallback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import de.bieniekconsulting.lucene.jdbc.directory.JdbcDirectory;
+import de.bieniekconsulting.lucene.jdbc.directory.JdbcLock;
+import de.bieniekconsulting.lucene.jdbc.directory.JdbcLockManager;
+import de.bieniekconsulting.lucene.jdbc.directory.LucenceConfiguration;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @RunWith(SpringRunner.class)

@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import static org.springframework.context.annotation.FilterType.ANNOTATION;
 

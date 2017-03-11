@@ -14,13 +14,14 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import de.bieniekconsulting.jdbc.logstore.JdbcLogstoreConfiguration;
+import de.bieniekconsulting.lucene.jdbc.directory.LucenceConfiguration;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @SpringBootApplication
 @Configuration
 @ComponentScan(excludeFilters = @Filter(type = ANNOTATION, classes = TestConfiguration.class))
 @EnableAutoConfiguration
-@Import(JdbcLogstoreConfiguration.class)
+@Import({ JdbcLogstoreConfiguration.class, LucenceConfiguration.class })
 public class LogstoreConfiguration {
 	@Configuration
 	@EnableWebSecurity

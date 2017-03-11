@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.lucene.jdbc.types.Pair;
+import de.bieniekconsulting.lucene.jdbc.types.Pair;
 
 @Component
 public class JdbcFileRegistry {

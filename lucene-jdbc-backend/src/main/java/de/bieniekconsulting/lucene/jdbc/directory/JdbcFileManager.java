@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,8 +23,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.bieniekconsulting.logstore.lucene.jdbc.types.LuceneFileExtent;
-import de.bieniekconsulting.logstore.lucene.jdbc.types.Pair;
+import de.bieniekconsulting.lucene.jdbc.types.LuceneFileExtent;
+import de.bieniekconsulting.lucene.jdbc.types.Pair;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

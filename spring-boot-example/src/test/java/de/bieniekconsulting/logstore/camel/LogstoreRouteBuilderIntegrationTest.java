@@ -40,8 +40,8 @@ import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
 import de.bieniekconsulting.jdbc.logstore.LogstoreService;
 import de.bieniekconsulting.logstore.LogstoreConfiguration;
 import de.bieniekconsulting.logstore.components.ComponentsConfiguration;
-import de.bieniekconsulting.logstore.lucene.jdbc.directory.LucenceService;
 import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.lucene.jdbc.directory.LucenceService;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @RunWith(SpringRunner.class)

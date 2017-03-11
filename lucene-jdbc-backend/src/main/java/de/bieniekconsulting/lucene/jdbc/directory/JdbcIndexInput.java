@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import org.apache.lucene.store.IndexInput;
 
-import de.bieniekconsulting.logstore.lucene.jdbc.types.LuceneFileExtent;
+import de.bieniekconsulting.lucene.jdbc.types.LuceneFileExtent;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

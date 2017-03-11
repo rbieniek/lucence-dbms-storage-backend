@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.types;
+package de.bieniekconsulting.lucene.jdbc.types;
 
 import java.util.UUID;
 

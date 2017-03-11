@@ -1,8 +1,9 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import static org.apache.lucene.index.IndexWriterConfig.OpenMode.CREATE_OR_APPEND;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -15,6 +16,7 @@ import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StoredField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexNotFoundException;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.queryparser.flexible.core.QueryNodeException;
@@ -29,7 +31,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.lucene.jdbc.types.LogRecord;
+import de.bieniekconsulting.lucene.jdbc.types.LogRecord;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -96,8 +98,12 @@ public class LucenceService implements InitializingBean, DisposableBean {
 			log.info("Cannot query index with expression {}", queryExpr, e);
 
 			throw new RuntimeException(e);
+		} catch (final IndexNotFoundException e) {
+			log.info("Cannot query search index, no searchable indeces created yet", e);
+
+			return Collections.emptySet();
 		} catch (final IOException e) {
-			log.info("Cannot query search idnex", e);
+			log.info("Cannot query search index", e);
 
 			throw e;
 		}

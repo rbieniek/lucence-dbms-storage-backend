@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.lucene.jdbc.directory;
+package de.bieniekconsulting.lucene.jdbc.directory;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.FactoryBean;

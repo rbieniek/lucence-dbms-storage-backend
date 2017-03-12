@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.components;
+package de.bieniekconsulting.logstore.springboot.components;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

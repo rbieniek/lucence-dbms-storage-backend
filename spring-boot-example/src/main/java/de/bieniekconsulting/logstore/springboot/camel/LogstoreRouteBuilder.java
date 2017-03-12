@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import static org.apache.camel.model.rest.RestParamType.body;
 import static org.apache.camel.model.rest.RestParamType.path;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonParseException;
 
-import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
 import lombok.RequiredArgsConstructor;
 
 @Component

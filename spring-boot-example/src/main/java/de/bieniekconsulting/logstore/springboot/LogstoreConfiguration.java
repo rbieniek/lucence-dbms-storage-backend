@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore;
+package de.bieniekconsulting.logstore.springboot;
 
 import static org.springframework.context.annotation.FilterType.ANNOTATION;
 

@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import java.io.IOException;
 import java.net.URI;

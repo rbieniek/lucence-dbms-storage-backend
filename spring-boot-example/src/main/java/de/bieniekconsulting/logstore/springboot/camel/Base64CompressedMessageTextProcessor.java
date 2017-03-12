@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -6,8 +6,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.components.Base64CompressedDecoder;
-import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.components.Base64CompressedDecoder;
+import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

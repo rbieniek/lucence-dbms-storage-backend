@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.fail;
@@ -41,9 +41,10 @@ import org.springframework.web.client.RestTemplate;
 
 import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
 import de.bieniekconsulting.jdbc.logstore.LogstoreService;
-import de.bieniekconsulting.logstore.LogstoreConfiguration;
-import de.bieniekconsulting.logstore.components.ComponentsConfiguration;
-import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.LogstoreConfiguration;
+import de.bieniekconsulting.logstore.springboot.camel.CamelConfiguration;
+import de.bieniekconsulting.logstore.springboot.components.ComponentsConfiguration;
+import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
 import de.bieniekconsulting.lucene.jdbc.directory.LucenceService;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 

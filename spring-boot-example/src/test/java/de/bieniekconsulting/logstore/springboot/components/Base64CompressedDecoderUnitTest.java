@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.components;
+package de.bieniekconsulting.logstore.springboot.components;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,6 +9,8 @@ import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
+
+import de.bieniekconsulting.logstore.springboot.components.Base64CompressedDecoder;
 
 public class Base64CompressedDecoderUnitTest {
 

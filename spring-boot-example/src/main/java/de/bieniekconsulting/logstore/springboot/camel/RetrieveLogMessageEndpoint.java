@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import java.util.Optional;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
 import de.bieniekconsulting.jdbc.logstore.LogstoreService;
-import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
 import lombok.RequiredArgsConstructor;
 
 @Component

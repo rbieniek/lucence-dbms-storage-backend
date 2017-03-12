@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.types;
+package de.bieniekconsulting.logstore.springboot.types;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

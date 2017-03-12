@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import static org.springframework.context.annotation.FilterType.ANNOTATION;
 

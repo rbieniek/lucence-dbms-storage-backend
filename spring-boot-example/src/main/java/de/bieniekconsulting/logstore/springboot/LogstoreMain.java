@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore;
+package de.bieniekconsulting.logstore.springboot;
 
 import org.springframework.boot.SpringApplication;
 

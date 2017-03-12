@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.camel;
+package de.bieniekconsulting.logstore.springboot.camel;
 
 import org.apache.camel.Exchange;
 import org.springframework.http.HttpStatus;

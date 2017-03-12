@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.components;
+package de.bieniekconsulting.logstore.springboot.components;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,7 +14,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-import de.bieniekconsulting.logstore.types.LogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.components.ComponentsConfiguration;
+import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @RunWith(SpringRunner.class)

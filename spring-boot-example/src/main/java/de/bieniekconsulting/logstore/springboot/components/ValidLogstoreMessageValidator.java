@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.components;
+package de.bieniekconsulting.logstore.springboot.components;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -6,8 +6,8 @@ import javax.validation.ConstraintValidatorContext;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import de.bieniekconsulting.logstore.types.LogstoreMessage;
-import de.bieniekconsulting.logstore.types.ValidLogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
+import de.bieniekconsulting.logstore.springboot.types.ValidLogstoreMessage;
 
 @Component
 public class ValidLogstoreMessageValidator implements ConstraintValidator<ValidLogstoreMessage, LogstoreMessage> {

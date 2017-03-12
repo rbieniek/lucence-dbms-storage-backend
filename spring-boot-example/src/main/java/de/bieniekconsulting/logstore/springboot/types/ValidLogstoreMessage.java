@@ -1,4 +1,4 @@
-package de.bieniekconsulting.logstore.types;
+package de.bieniekconsulting.logstore.springboot.types;
 
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import de.bieniekconsulting.logstore.components.ValidLogstoreMessageValidator;
+import de.bieniekconsulting.logstore.springboot.components.ValidLogstoreMessageValidator;
 
 @Documented
 @Retention(RUNTIME)

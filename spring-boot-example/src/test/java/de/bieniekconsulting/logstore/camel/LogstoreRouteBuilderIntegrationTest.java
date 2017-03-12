@@ -5,6 +5,8 @@ import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_CLASS;
+import static org.springframework.test.annotation.DirtiesContext.HierarchyMode.EXHAUSTIVE;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.Charset;
@@ -32,6 +34,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -46,6 +49,7 @@ import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = LogstoreRouteBuilderIntegrationTest.TestConfig.class)
+@DirtiesContext(classMode = AFTER_CLASS, hierarchyMode = EXHAUSTIVE)
 public class LogstoreRouteBuilderIntegrationTest {
 
 	@LocalServerPort

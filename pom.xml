@@ -26,6 +26,7 @@
 		<commonsLang3Version>3.5</commonsLang3Version>
 		<commonsIoVersion>1.3.2</commonsIoVersion>
 		<commonsCompressVersion>1.12</commonsCompressVersion>
+		<httpCoreVersion>4.4.6</httpCoreVersion>
 
 		<camelVersion>2.18.2</camelVersion>
 		<luceneVersion>6.4.1</luceneVersion>
@@ -166,6 +167,11 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-compress</artifactId>
 				<version>${commonsCompressVersion}</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.httpcomponents</groupId>
+			  <artifactId>httpcore</artifactId>
+			  <version>${httpCoreVersion}</version>
 			</dependency>
 			
 			<dependency>

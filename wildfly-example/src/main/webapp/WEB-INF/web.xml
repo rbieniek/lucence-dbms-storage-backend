@@ -1,0 +1,29 @@
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <!-- configure a route builder to use -->
+  <!-- Camel will pickup any parameter names that start with routeBuilder (case ignored) -->
+  <context-param>
+    <param-name>routeBuilder-routes</param-name>
+    <param-value>packagescan:de.bieniekconsulting.logstore.wildfly.camel</param-value>
+  </context-param>
+ 
+  <!-- register Camel as a listener so we can bootstrap Camel when the web application starts -->
+  <listener>
+    <listener-class>org.apache.camel.component.servletlistener.SimpleCamelServletContextListener</listener-class>
+  </listener>
+ 
+  <!-- Camel servlet used in the Camel application -->
+  <servlet>
+    <servlet-name>CamelServlet</servlet-name>
+    <servlet-class>org.apache.camel.component.servlet.CamelHttpTransportServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+ 
+  <!-- Camel servlet mapping -->
+  <servlet-mapping>
+    <servlet-name>CamelServlet</servlet-name>
+    <url-pattern>/camel/*</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -13,6 +13,8 @@ bin/
 .settings/
 target/
 
+.springBeans
+
 *.tmp
 *~
 

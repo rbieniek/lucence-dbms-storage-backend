@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>lucence-dbms-storage-backend</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>wildfly-example</artifactId>
+	<packaging>war</packaging>
+
+	<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<scope>provided</scope>
+			</dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>spring-support</artifactId>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>logstore-jdbc</artifactId>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>lucene-jdbc-backend</artifactId>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>spring-cdi-bridge</artifactId>
+		<version>1.0</version>
+	  </dependency>
+
+			<dependency>
+			  <groupId>org.quartz-scheduler</groupId>
+			  <artifactId>quartz</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-io</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-compress</artifactId>
+			</dependency>
+
+			<dependency>
+			  <groupId>org.projectlombok</groupId>
+			  <artifactId>lombok</artifactId>
+			  <scope>provided</scope>
+			</dependency>
+
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-swagger-java</artifactId>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-core</artifactId>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-jackson</artifactId>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-servlet</artifactId>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-servletlistener</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-core</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<scope>test</scope>
+			</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian</groupId>
+			<artifactId>arquillian-bom</artifactId>
+			<version>${arquillianVersion}</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap.resolver</groupId>
+			<artifactId>shrinkwrap-resolver-depchain</artifactId>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian.junit</groupId>
+			<artifactId>arquillian-junit-container</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.arquillian.container</groupId>
+			<artifactId>arquillian-container-chameleon</artifactId>
+			<scope>test</scope>
+		</dependency>
+	  <dependency>
+	    <groupId>com.h2database</groupId>
+	    <artifactId>h2</artifactId>
+	    <scope>test</scope>
+	  </dependency>
+
+	</dependencies>
+
+</project>

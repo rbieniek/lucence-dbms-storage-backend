@@ -12,6 +12,7 @@
 		<module>lucene-jdbc-backend</module>
 		<module>logstore-jdbc</module>
 		<module>spring-boot-example</module>
+		<module>wildfly-example</module>
 	</modules>
 
 	<properties>
@@ -99,6 +100,12 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${javaxJeeVersion}</version>
+				<scope>provided</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
@@ -189,6 +196,26 @@
 			<dependency>
 			  <groupId>org.apache.camel</groupId>
 			  <artifactId>camel-swagger-java</artifactId>
+			  <version>${camelVersion}</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-core</artifactId>
+			  <version>${camelVersion}</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-jackson</artifactId>
+			  <version>${camelVersion}</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-servlet</artifactId>
+			  <version>${camelVersion}</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-servletlistener</artifactId>
 			  <version>${camelVersion}</version>
 			</dependency>
 

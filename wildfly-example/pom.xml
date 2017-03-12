@@ -90,40 +90,36 @@
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-core</artifactId>
 			</dependency>
-	  <dependency>
-		<groupId>de.bieniek-consulting</groupId>
-		<artifactId>spring-support</artifactId>
-		<type>test-jar</type>
-		<scope>test</scope>
-		<version>1.0</version>
-	  </dependency>
-	  <dependency>
-		<groupId>de.bieniek-consulting</groupId>
-		<artifactId>logstore-jdbc</artifactId>
-		<type>test-jar</type>
-		<scope>test</scope>
-		<version>1.0</version>
-	  </dependency>
-	  <dependency>
-		<groupId>de.bieniek-consulting</groupId>
-		<artifactId>lucene-jdbc-backend</artifactId>
-		<type>test-jar</type>
-		<scope>test</scope>
-		<version>1.0</version>
-	  </dependency>
-	  <dependency>
-		<groupId>de.bieniek-consulting</groupId>
-		<artifactId>spring-cdi-bridge</artifactId>
-		<type>test-jar</type>
-		<scope>test</scope>
-		<version>1.0</version>
-	  </dependency>
 
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<scope>test</scope>
 			</dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>spring-support-test</artifactId>
+		<scope>test</scope>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>logstore-jdbc-test</artifactId>
+		<scope>test</scope>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>lucene-jdbc-backend-test</artifactId>
+		<scope>test</scope>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>spring-cdi-bridge-test</artifactId>
+		<scope>test</scope>
+		<version>1.0</version>
+	  </dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-library</artifactId>

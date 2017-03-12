@@ -12,6 +12,9 @@
 		<module>lucene-jdbc-backend</module>
 		<module>logstore-jdbc</module>
 		<module>spring-boot-example</module>
+		<module>spring-support-test</module>
+		<module>lucene-jdbc-backend-test</module>
+		<module>logstore-jdbc-test</module>
 		<module>wildfly-example</module>
 	</modules>
 

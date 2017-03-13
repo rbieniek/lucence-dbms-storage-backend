@@ -15,15 +15,16 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import lombok.RequiredArgsConstructor;
+import de.bieniekconsulting.springcdi.bridge.api.SpringScoped;
 import lombok.extern.slf4j.Slf4j;
 
 @Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Slf4j
+@SpringScoped
 public class LogstoreService implements InitializingBean {
 
-	private final DataSource dataSource;
+	@Autowired
+	private DataSource dataSource;
 
 	private JdbcTemplate jdbcTemplate;
 

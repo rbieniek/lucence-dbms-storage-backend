@@ -32,18 +32,19 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import de.bieniekconsulting.lucene.jdbc.types.LogRecord;
-import lombok.RequiredArgsConstructor;
+import de.bieniekconsulting.springcdi.bridge.api.SpringScoped;
 import lombok.extern.slf4j.Slf4j;
 
 @Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Slf4j
+@SpringScoped
 public class LucenceService implements InitializingBean, DisposableBean {
 
 	private static final String FIELD_MESSAGE = "message";
 	private static final String FIELD_ID = "id";
 
-	private final JdbcDirectory jdbcDirectory;
+	@Autowired
+	private JdbcDirectory jdbcDirectory;
 
 	private IndexWriter indexWriter;
 	private AtomicInteger documentCounter = new AtomicInteger(0);

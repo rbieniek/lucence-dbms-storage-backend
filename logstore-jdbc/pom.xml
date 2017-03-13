@@ -17,6 +17,11 @@
 		<version>1.0</version>
 	  </dependency>
 	  <dependency>
+		<groupId>de.bieniek-consulting</groupId>
+		<artifactId>spring-cdi-bridge-api</artifactId>
+		<version>1.0</version>
+	  </dependency>
+	  <dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-core</artifactId>
 	  </dependency>

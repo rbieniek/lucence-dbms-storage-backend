@@ -22,6 +22,7 @@ import de.bieniekconsulting.logstore.wildfly.spring.WildflySpringConfiguration;
 import de.bieniekconsulting.logstore.wildfly.types.LogstoreMessage;
 import de.bieniekconsulting.lucene.jdbc.test.LuceneJdbcDependenciesProvider;
 import de.bieniekconsulting.lucene.jdbc.test.LuceneJdbcTestJarBuilder;
+import de.bieniekconsulting.springcdi.bridge.api.test.SpringCdiApiTestJarBuilder;
 import de.bieniekconsulting.springcdi.bridge.test.SpringCdiDependenciesProvider;
 import de.bieniekconsulting.springcdi.bridge.test.SpringCdiTestJarBuilder;
 import de.bieniekconsulting.springframework.support.test.SpringSupportDependenciesProvider;
@@ -34,7 +35,7 @@ public class WildflyTestArchivesBuilder {
 				.addPackage(WildflySpringConfiguration.class.getPackage())
 				.addPackage(LogstoreMessage.class.getPackage())
 				.addAsManifestResource(new StringAsset(WildflyApplicationContextProvider.class.getName()),
-						"services/de.bieniekconsulting.springcdi.bridge.support.ApplicationContextProvider")
+						"services/de.bieniekconsulting.springcdi.bridge.api.ApplicationContextProvider")
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml").addAsResource("db/changelog/db.changelog.xml");
 	}
 
@@ -48,8 +49,9 @@ public class WildflyTestArchivesBuilder {
 		dependencies.addAll(LogstoreJdbcDependenciesProvider.dependencies());
 
 		return ShrinkWrap.create(WebArchive.class).addAsLibraries(jar())
-				.addAsLibraries(SpringCdiTestJarBuilder.extensionJar(), SpringSupportTestJarBuilder.jar(),
-						LuceneJdbcTestJarBuilder.jar(), LogstoreJdbcTestJarBuilder.jar())
+				.addAsLibraries(SpringCdiTestJarBuilder.extensionJar(), SpringCdiApiTestJarBuilder.jar(),
+						SpringSupportTestJarBuilder.jar(), LuceneJdbcTestJarBuilder.jar(),
+						LogstoreJdbcTestJarBuilder.jar())
 				.addAsLibraries(dependencies)
 				.addAsLibraries(resolver
 						.resolve("org.liquibase:liquibase-core:3.5.3", "org.apache.httpcomponents:httpcore:4.4.6",

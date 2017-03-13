@@ -6,7 +6,7 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
 public class SpringSupportTestJarBuilder {
-	public static JavaArchive extensionJar() {
+	public static JavaArchive jar() {
 		return ShrinkWrap.create(JavaArchive.class).addClass(TestConfiguration.class);
 	}
 }

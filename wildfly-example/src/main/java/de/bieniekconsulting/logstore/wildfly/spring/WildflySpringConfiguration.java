@@ -26,7 +26,7 @@ public class WildflySpringConfiguration {
 	public DataSource dataSource() {
 		final JndiDataSourceLookup lookup = new JndiDataSourceLookup();
 
-		return lookup.getDataSource("jdbc/arquillian");
+		return lookup.getDataSource("jdbc/lucene");
 	}
 
 	@Bean
@@ -45,7 +45,7 @@ public class WildflySpringConfiguration {
 		final SpringLiquibase springLiquibase = new SpringLiquibase();
 
 		springLiquibase.setDataSource(dataSource);
-		springLiquibase.setChangeLog("classpath:db-changelog.xml");
+		springLiquibase.setChangeLog("classpath:db/changelog/db.changelog.xml");
 
 		return springLiquibase;
 	}

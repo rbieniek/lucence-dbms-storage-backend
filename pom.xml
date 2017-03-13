@@ -30,6 +30,8 @@
 		<commonsIoVersion>1.3.2</commonsIoVersion>
 		<commonsCompressVersion>1.12</commonsCompressVersion>
 		<httpCoreVersion>4.4.6</httpCoreVersion>
+		<httpClientVersion>4.5.3</httpClientVersion>
+		<okHttpVersion>3.6.0</okHttpVersion>
 
 		<camelVersion>2.18.2</camelVersion>
 		<luceneVersion>6.4.1</luceneVersion>
@@ -176,7 +178,16 @@
 			  <artifactId>httpcore</artifactId>
 			  <version>${httpCoreVersion}</version>
 			</dependency>
-			
+			<dependency>
+			  <groupId>org.apache.httpcomponents</groupId>
+			  <artifactId>httpclient</artifactId>
+			  <version>${httpClientVersion}</version>
+			</dependency>
+			<dependency>
+  				<groupId>com.squareup.okhttp3</groupId>
+  				<artifactId>okhttp</artifactId>
+  				<version>${okHttpVersion}</version>
+			</dependency>			
 			<dependency>
 			  <groupId>org.apache.camel</groupId>
 			  <artifactId>camel-spring-starter</artifactId>

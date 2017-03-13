@@ -7,8 +7,8 @@ import de.bieniekconsulting.lucene.jdbc.directory.JdbcDirectory;
 import de.bieniekconsulting.lucene.jdbc.types.LogRecord;
 
 public class LuceneJdbcTestJarBuilder {
-	public static JavaArchive extensionJar() {
+	public static JavaArchive jar() {
 		return ShrinkWrap.create(JavaArchive.class).addPackage(JdbcDirectory.class.getPackage())
-				.addPackage(LogRecord.class.getPackage());
+				.addPackage(LogRecord.class.getPackage()).addAsResource("db/changelog/db.lucene-changelog.xml");
 	}
 }

@@ -4,7 +4,7 @@
 	xsi:schemaLocation="
         http://www.jboss.org/ironjacamar/schema
         http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
-	<datasource enabled="true" jndi-name="jdbc/arquillian"
+	<datasource enabled="true" jndi-name="jdbc/lucene"
 		pool-name="ArquillianEmbeddedH2Pool">
 		<connection-url>jdbc:h2:mem:arquillian;DB_CLOSE_DELAY=-1</connection-url>
 		<driver>h2</driver>

@@ -42,9 +42,9 @@ import org.springframework.web.client.RestTemplate;
 import de.bieniekconsulting.jdbc.logstore.LogstoreRecord;
 import de.bieniekconsulting.jdbc.logstore.LogstoreService;
 import de.bieniekconsulting.logstore.springboot.LogstoreConfiguration;
-import de.bieniekconsulting.logstore.springboot.camel.CamelConfiguration;
 import de.bieniekconsulting.logstore.springboot.components.ComponentsConfiguration;
 import de.bieniekconsulting.logstore.springboot.types.LogstoreMessage;
+import de.bieniekconsulting.lucene.jdbc.directory.JdbcDirectory;
 import de.bieniekconsulting.lucene.jdbc.directory.LucenceService;
 import de.bieniekconsulting.springframework.support.TestConfiguration;
 
@@ -337,6 +337,11 @@ public class LogstoreRouteBuilderIntegrationTest {
 			});
 
 			return service;
+		}
+
+		@Bean
+		public JdbcDirectory jdbcDirectory() {
+			return mock(JdbcDirectory.class);
 		}
 	}
 }

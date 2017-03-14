@@ -41,6 +41,7 @@
 
 		<liquibaseVersion>3.5.3</liquibaseVersion>
 		<h2Version>1.4.193</h2Version>
+		<hikariCPVersion>2.6.1</hikariCPVersion>
 
 		<lombokVersion>1.16.14</lombokVersion>
 
@@ -129,6 +130,11 @@
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-core</artifactId>
 				<version>${liquibaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zaxxer</groupId>
+				<artifactId>HikariCP</artifactId>
+				<version>${hikariCPVersion}</version>
 			</dependency>
 			<dependency>
 			  <groupId>org.springframework.boot</groupId>

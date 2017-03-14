@@ -28,6 +28,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.ContextStoppedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -118,6 +119,8 @@ public class LucenceService implements InitializingBean, DisposableBean {
 
 	@EventListener(ContextRefreshedEvent.class)
 	public void contextStarted() throws Exception {
+		log.info("Starting lucene service");
+
 		final IndexWriterConfig config = new IndexWriterConfig(new WhitespaceAnalyzer());
 
 		config.setOpenMode(CREATE_OR_APPEND);
@@ -126,12 +129,30 @@ public class LucenceService implements InitializingBean, DisposableBean {
 		indexWriter = new IndexWriter(jdbcDirectory, config);
 	}
 
+	@EventListener(ContextStoppedEvent.class)
+	public void contextStopped() throws Exception {
+		log.info("Stopping lucene service");
+
+		if (indexWriter != null) {
+			indexWriter.close();
+			indexWriter = null;
+		}
+
+		if (jdbcDirectory != null) {
+			jdbcDirectory.close();
+			jdbcDirectory = null;
+		}
+
+	}
+
 	@Override
 	public void destroy() throws Exception {
 		if (indexWriter != null) {
 			indexWriter.close();
 		}
 
-		jdbcDirectory.close();
+		if (jdbcDirectory != null) {
+			jdbcDirectory.close();
+		}
 	}
 }

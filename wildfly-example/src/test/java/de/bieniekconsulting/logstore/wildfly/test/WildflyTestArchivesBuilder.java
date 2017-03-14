@@ -53,12 +53,12 @@ public class WildflyTestArchivesBuilder {
 						SpringSupportTestJarBuilder.jar(), LuceneJdbcTestJarBuilder.jar(),
 						LogstoreJdbcTestJarBuilder.jar())
 				.addAsLibraries(dependencies)
-				.addAsLibraries(resolver
-						.resolve("org.liquibase:liquibase-core:3.5.3", "org.apache.httpcomponents:httpcore:4.4.6",
-								"org.apache.camel:camel-swagger-java:2.18.2", "org.apache.camel:camel-core:2.18.2",
-								"org.apache.camel:camel-jackson:2.18.2", "org.apache.camel:camel-servlet:2.18.2",
-								"org.apache.camel:camel-servletlistener:2.18.2", "org.apache.camel:camel-cdi:2.18.2")
-						.withTransitivity().as(JavaArchive.class))
+				.addAsLibraries(resolver.resolve("org.liquibase:liquibase-core:3.5.3",
+						"org.apache.httpcomponents:httpcore:4.4.6", "org.apache.camel:camel-swagger-java:2.18.2",
+						"org.apache.camel:camel-core:2.18.2", "org.apache.camel:camel-jackson:2.18.2",
+						"org.apache.camel:camel-servlet:2.18.2", "org.apache.camel:camel-servletlistener:2.18.2",
+						"org.apache.camel:camel-cdi:2.18.2", "com.zaxxer:HikariCP:2.6.1").withTransitivity()
+						.as(JavaArchive.class))
 				.addAsWebInfResource("jboss-ds.xml")
 				.setWebXML(new FileAsset(new File("src/main/webapp/WEB-INF/web.xml")));
 	}

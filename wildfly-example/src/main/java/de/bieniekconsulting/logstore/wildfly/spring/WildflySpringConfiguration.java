@@ -10,6 +10,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.transaction.jta.JtaTransactionManager;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import de.bieniekconsulting.jdbc.logstore.JdbcLogstoreConfiguration;
 import de.bieniekconsulting.lucene.jdbc.directory.LucenceConfiguration;
 import liquibase.integration.spring.SpringLiquibase;
@@ -24,9 +27,13 @@ public class WildflySpringConfiguration {
 
 	@Bean
 	public DataSource dataSource() {
+		final HikariConfig config = new HikariConfig();
+
 		final JndiDataSourceLookup lookup = new JndiDataSourceLookup();
 
-		return lookup.getDataSource("jdbc/lucene");
+		config.setDataSource(lookup.getDataSource("jdbc/lucene"));
+
+		return new HikariDataSource(config);
 	}
 
 	@Bean

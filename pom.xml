@@ -238,6 +238,11 @@
 			  <artifactId>camel-servletlistener</artifactId>
 			  <version>${camelVersion}</version>
 			</dependency>
+			<dependency>
+			  <groupId>org.apache.camel</groupId>
+			  <artifactId>camel-cdi</artifactId>
+			  <version>${camelVersion}</version>
+			</dependency>
 
 			<dependency>
 			  <groupId>org.apache.lucene</groupId>

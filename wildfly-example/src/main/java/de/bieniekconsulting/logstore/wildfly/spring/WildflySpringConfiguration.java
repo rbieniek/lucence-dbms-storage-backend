@@ -31,7 +31,7 @@ public class WildflySpringConfiguration {
 
 		final JndiDataSourceLookup lookup = new JndiDataSourceLookup();
 
-		config.setDataSource(lookup.getDataSource("jdbc/lucene"));
+		config.setDataSource(lookup.getDataSource("java:/lucenedb"));
 
 		return new HikariDataSource(config);
 	}
